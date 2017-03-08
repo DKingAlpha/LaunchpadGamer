@@ -143,6 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="lib\launchpad.h" />
+    <ClInclude Include="lib\mapper.h" />
     <ClInclude Include="lib\midifile\Binasc.h" />
     <ClInclude Include="lib\midifile\MidiEvent.h" />
     <ClInclude Include="lib\midifile\MidiEventList.h" />
@@ -154,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\launchpad.cpp" />
+    <ClCompile Include="lib\mapper.cpp" />
     <ClCompile Include="lib\midifile\Binasc.cpp" />
     <ClCompile Include="lib\midifile\MidiEvent.cpp" />
     <ClCompile Include="lib\midifile\MidiEventList.cpp" />

@@ -54,14 +54,16 @@ class LaunchpadPro : public LaunchpadBase {
 		void setFlash(BYTE key, BYTE color);
 		void setPulse(BYTE key, BYTE color);
 		void displayText(unsigned int color, unsigned int speed, std::string text);
-        void playMidiFile(char * file);
-        void setupMapper();
+        void playMidiFile(std::string mapgame);
+        void setupMapper(std::string mapgame);
 
     private:
         bool isButton(int row, int col);
         bool isKey(int row, int col);
         bool isButton(int code);
         bool isKey(int code);
+        void maproutine(void);
+        std::string game_to_map;
 
 };
 
@@ -77,4 +79,3 @@ class LaunchpadS : public LaunchpadBase {
 		unsigned char pro_to_s_color(unsigned char pro_color);
 };
 
-extern LaunchpadPro *launchpad;

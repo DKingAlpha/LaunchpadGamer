@@ -6,14 +6,15 @@
 //
 
 #include <algorithm>
+#include <thread>
 #include <cmath>
 #include "./rtmidi/RtMidi.h"
 #include "./midifile/MidiFile.h"
 #include <windows.h>
 #include "launchpad.h"
+#include "mapper.h"
 
-
-#define MSG_FIN -1
+#define MSG_FIN 256
 #define SYSEX_FIN 247
 
 // Generate with GenerateNoteButtonMap.cpp
@@ -253,7 +254,7 @@ void LaunchpadPro::displayText(unsigned int color, unsigned int speed,
 	message.erase(message.begin(), message.begin() + message.size());
 }
 
-void LaunchpadPro::playMidiFile(char *file) {
+void LaunchpadPro::playMidiFile(std::string file) {
     MidiFile midifile;
     MidiEvent *mev;
     std::vector<unsigned char> message;
@@ -279,10 +280,28 @@ void LaunchpadPro::playMidiFile(char *file) {
     }
 }
 
-void LaunchpadPro::setupMapper()
+void LaunchpadPro::setupMapper(std::string mapgame)
 {
-
+    game_to_map = "mapgame";
+    std::thread mapper_thread(&maproutine,this);
 }
+
+void LaunchpadPro::maproutine()
+{
+    std::vector<BYTE> msg;
+    MidiParser midiparser(this, "lol");
+
+    while (true)
+    {
+        getMessage(&msg);
+        if (msg.size() != 0)
+        {
+            midiparser.parseMsg(msg);
+        }
+        Sleep(30);
+    }
+}
+
 
 bool LaunchpadPro::isButton(int row , int col)
 {
@@ -336,13 +355,13 @@ int LaunchpadS::connect() {
 			Sleep( 10 ); // Sleep for 10 milliseconds ... platform-dependent.
 		}
 
-		sendMessage( 176, 0, 2, -1 ); // Set to Drum Rack Mode
+		sendMessage( 176, 0, 2, MSG_FIN ); // Set to Drum Rack Mode
 	}
 	return status;
 }
 
 void LaunchpadS::disconnect() {
-	sendMessage( 176, 0, 0, -1 ); // Reset
+	sendMessage( 176, 0, 0, MSG_FIN); // Reset
 	LaunchpadBase::disconnect();
 }
 

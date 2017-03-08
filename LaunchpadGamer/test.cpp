@@ -25,19 +25,7 @@ int main(void)
             /*scanf("%s", midif);
             sprintf(midifilename, "resources/%s.mid", midif);
             lpd->playMidiFile(midifilename);*/
-            if (msg.size() != 0)
-            {
-                std::vector<BYTE>::iterator iter;
-                for (iter = msg.begin(); iter != msg.end(); iter++)
-                {
-                    printf("0x%02X ",*iter);
-                }
-                for (iter = msg.begin(); iter != msg.end(); iter++)
-                {
-                    printf("%c", *iter);
-                }
-                printf("\n" );
-            }
+           
             Sleep(50);
         }
     }

@@ -51,6 +51,9 @@
     <ClInclude Include="lib\launchpad.h">
       <Filter>Library</Filter>
     </ClInclude>
+    <ClInclude Include="lib\mapper.h">
+      <Filter>Library</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
@@ -81,6 +84,9 @@
       <Filter>Library\rtmidi</Filter>
     </ClCompile>
     <ClCompile Include="lib\launchpad.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\mapper.cpp">
       <Filter>Library</Filter>
     </ClCompile>
   </ItemGroup>
