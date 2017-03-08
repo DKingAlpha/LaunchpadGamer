@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Library">
+      <UniqueIdentifier>{0cd58567-3e2b-4368-9ba6-2457a43fc33d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\midifile">
+      <UniqueIdentifier>{cbcb68c5-d629-48e7-9532-0afd117d054e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\rtmidi">
+      <UniqueIdentifier>{50afebc5-47ac-4d38-9304-fae3474983b0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lib\midifile\Binasc.h">
+      <Filter>Library\midifile</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\midifile\MidiEvent.h">
+      <Filter>Library\midifile</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\midifile\MidiEventList.h">
+      <Filter>Library\midifile</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\midifile\MidiFile.h">
+      <Filter>Library\midifile</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\midifile\MidiMessage.h">
+      <Filter>Library\midifile</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\midifile\Options.h">
+      <Filter>Library\midifile</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\rtmidi\RtMidi.h">
+      <Filter>Library\rtmidi</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\rtmidi\rtmidi_c.h">
+      <Filter>Library\rtmidi</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\launchpad.h">
+      <Filter>Library</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\midifile\Binasc.cpp">
+      <Filter>Library\midifile</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\midifile\MidiEvent.cpp">
+      <Filter>Library\midifile</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\midifile\MidiEventList.cpp">
+      <Filter>Library\midifile</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\midifile\MidiFile.cpp">
+      <Filter>Library\midifile</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\midifile\MidiMessage.cpp">
+      <Filter>Library\midifile</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\midifile\Options.cpp">
+      <Filter>Library\midifile</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\rtmidi\RtMidi.cpp">
+      <Filter>Library\rtmidi</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\rtmidi\rtmidi_c.cpp">
+      <Filter>Library\rtmidi</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\launchpad.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
