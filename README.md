@@ -14,32 +14,32 @@
 
 
 #   KEY     EVENT         ACTIONS
-#   key     event        action1;action2;action3;...
+##   key     event        action1;action2;action3;...
 
-### KEY
-# row,col
-# keycode
+# KEY
+### row,col
+### keycode
 
-### EVENT
-# KEYAUTO
-# KEYDOWN
-# KEYUP
+# EVENT
+### KEYAUTO
+### KEYDOWN
+### KEYUP
 
-###    ACTION
-# PlayMidiFile(filepath)
-# SetColor(key1,color1|row2,col2,color2|...)
-# SetRowColor(row1,color1|row2,color2|...)
-# SetColumnColor(col1,color1|col2,color2)
-# SetPadColor(color1)
-# SetFlash(key1,color1|row2,col2,color2|...)
-# SetPulse(key1,color1|row2,col2,color2|...)
-# DisplayText(color,speed,text)
-# ClearPad()
-# StopDisplayText()
-# SendMessage(dec1,dec2,dec3,...)
-# Sleep(milisecond)
+#    ACTION
+### PlayMidiFile(filepath)
+### SetColor(key1,color1|row2,col2,color2|...)
+### SetRowColor(row1,color1|row2,color2|...)
+### SetColumnColor(col1,color1|col2,color2)
+### SetPadColor(color1)
+### SetFlash(key1,color1|row2,col2,color2|...)
+### SetPulse(key1,color1|row2,col2,color2|...)
+### DisplayText(color,speed,text)
+### ClearPad()
+### StopDisplayText()
+### SendMessage(dec1,dec2,dec3,...)
+### Sleep(milisecond)
 
-# BE AWARE THAT SPACE CHARACTOR ARE NOT DEALT WELL SO DO NOT USE SPACE IN MOST CASE.
+### BE AWARE THAT SPACE CHARACTOR ARE NOT DEALT WELL SO DO NOT USE SPACE IN MOST CASE.
 
 4,4   KEYDOWN   SetRowColor(2,45|4,45);Sleep(2000);SetRowColor(2,0|4,0);PlayMidiFile(a2.mid)
 4,4   KEYDOWN   Sleep(2000);SetRowColor(2,0|4,0);PlayMidiFile(testmidi/a1.mid)
