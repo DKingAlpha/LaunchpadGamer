@@ -16,16 +16,16 @@
 #   KEY     EVENT         ACTIONS
 ##   key     event        action1;action2;action3;...
 
-# KEY
+## KEY
 ### row,col
 ### keycode
 
-# EVENT
+## EVENT
 ### KEYAUTO
 ### KEYDOWN
 ### KEYUP
 
-#    ACTION
+##    ACTION
 ### PlayMidiFile(filepath)
 ### SetColor(key1,color1|row2,col2,color2|...)
 ### SetRowColor(row1,color1|row2,color2|...)
@@ -42,5 +42,7 @@
 ### BE AWARE THAT SPACE CHARACTOR ARE NOT DEALT WELL SO DO NOT USE SPACE IN MOST CASE.
 
 4,4   KEYDOWN   SetRowColor(2,45|4,45);Sleep(2000);SetRowColor(2,0|4,0);PlayMidiFile(a2.mid)
+
 4,4   KEYDOWN   Sleep(2000);SetRowColor(2,0|4,0);PlayMidiFile(testmidi/a1.mid)
+
 4,7   KEYAUTO   SetRowColor(2,45|4,45)
