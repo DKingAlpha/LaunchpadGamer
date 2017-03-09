@@ -12,6 +12,11 @@
 
 
 
+#### Config files should be located at config/$CONFSET/
+then be load in main() as lpd->setupMapper(CONFSET);
+Light mapping file is named as light.ini
+Key mapping file is named as keymap.ini
+
 
 #   KEY     EVENT         ACTIONS
 ##   key     event        action1;action2;action3;...
