@@ -6,24 +6,27 @@
 //
 
 #include <windows.h>
-#include "./rtmidi/RtMidi.h"
+#include "rtmidi/RtMidi.h"
 
 
+#define MSG_FIN 256
+#define SYSEX_FIN 247
 
 int note_to_button(int note);
 int button_to_note(int button);
 
-class LaunchpadBase {
+class LaunchpadBase 
+{
 	public:
 		LaunchpadBase();
 		int connect();
 		void disconnect();
 		bool isConnected();
 		int getMidiPort(std::string name, RtMidi *ports);
-		double getMessage(std::vector<unsigned char> *message_in);
+		double getMessage(std::vector<BYTE> *message_in);
         void sendMessage(unsigned int first_byte, ...);
-		virtual void setColor(unsigned char light, unsigned char color);
-		virtual void setPulse(unsigned char light, unsigned char color);
+		virtual void setColor(BYTE key, BYTE color);
+		virtual void setPulse(BYTE key, BYTE color);
 		std::string INPORT_NAME;
 		std::string OUTPORT_NAME;
         std::string PRODUCT_NAME;
@@ -37,7 +40,8 @@ class LaunchpadBase {
 		bool connected;
 };
 
-class LaunchpadPro : public LaunchpadBase {
+class LaunchpadPro : public LaunchpadBase
+{
 	public:
 		LaunchpadPro();
 		int connect();
@@ -52,7 +56,9 @@ class LaunchpadPro : public LaunchpadBase {
         void setPadColor(int color);
         void clearPad();
 		void setFlash(BYTE key, BYTE color);
+        void setFlash(int row, int col, BYTE color);
 		void setPulse(BYTE key, BYTE color);
+        void setPulse(int row, int col, BYTE color);
 		void displayText(unsigned int color, unsigned int speed, std::string text);
         void playMidiFile(std::string mapgame);
         void setupMapper(std::string mapgame);
@@ -62,12 +68,12 @@ class LaunchpadPro : public LaunchpadBase {
         bool isKey(int row, int col);
         bool isButton(int code);
         bool isKey(int code);
-        void maproutine(void);
         std::string game_to_map;
 
 };
 
-class LaunchpadS : public LaunchpadBase {
+class LaunchpadS : public LaunchpadBase 
+{
 	public:
 		LaunchpadS();
 		int connect();

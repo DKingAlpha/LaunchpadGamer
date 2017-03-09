@@ -8,14 +8,12 @@
 #include <algorithm>
 #include <thread>
 #include <cmath>
-#include "./rtmidi/RtMidi.h"
-#include "./midifile/MidiFile.h"
+#include "rtmidi/RtMidi.h"
+#include "midifile/MidiFile.h"
 #include <windows.h>
-#include "launchpad.h"
 #include "mapper.h"
+//#include "launchpad.h"
 
-#define MSG_FIN 256
-#define SYSEX_FIN 247
 
 // Generate with GenerateNoteButtonMap.cpp
 const int note_button_map[] = {
@@ -41,7 +39,8 @@ int button_to_note(int button) {
 	return 0;
 }
 
-LaunchpadBase::LaunchpadBase() {
+LaunchpadBase::LaunchpadBase() 
+{
 	midiin = new RtMidiIn();
 	midiout = new RtMidiOut();
 }
@@ -96,7 +95,7 @@ int LaunchpadBase::getMidiPort(std::string name, RtMidi *ports) {
 	return -1;
 }
 
-double LaunchpadBase::getMessage(std::vector<unsigned char> *message_in) {
+double LaunchpadBase::getMessage(std::vector<BYTE> *message_in) {
 	if (isConnected() == false) return -1;
 	return midiin->getMessage(message_in);
 }
@@ -106,7 +105,7 @@ void LaunchpadBase::sendMessage(unsigned int first_byte, ...) {
 	va_list varlist;
 	va_start(varlist, first_byte);
 	unsigned int byte = first_byte;
-	while (byte != SYSEX_FIN && byte != MSG_FIN && byte >= 0 && byte <= 255) {
+	while (byte != SYSEX_FIN && byte >= 0 && byte <= 255) {
 		message.push_back(byte);
 		byte = va_arg(varlist, unsigned int);
 	}
@@ -117,12 +116,12 @@ void LaunchpadBase::sendMessage(unsigned int first_byte, ...) {
 	message.erase(message.begin(), message.begin() + message.size());
 }
 
-void LaunchpadBase::setColor(unsigned char light, unsigned char color) {
+void LaunchpadBase::setColor(BYTE key, BYTE color) {
 	if (isConnected() == false) return;
 
 }
 
-void LaunchpadBase::setPulse(unsigned char light, unsigned char color) {
+void LaunchpadBase::setPulse(BYTE key, BYTE color) {
 	if (isConnected() == false) return;
 
 }
@@ -229,10 +228,21 @@ void LaunchpadPro::setFlash(BYTE  key, BYTE  color) {
 	if (isConnected() == false) return;
 	sendMessage( 240, 0, 32, 41, 2, 16, 35, key, color, SYSEX_FIN);
 }
+void LaunchpadPro::setFlash(int row, int col, BYTE  color) {
+    if (isConnected() == false) return;
+    BYTE key = 10 * row + col;
+    sendMessage(240, 0, 32, 41, 2, 16, 35, key, color, SYSEX_FIN);
+}
+
 
 void LaunchpadPro::setPulse(BYTE  key, BYTE  color) {
 	if (isConnected() == false) return;
 	sendMessage( 240, 0, 32, 41, 2, 16, 40, key, color, SYSEX_FIN);
+}
+void LaunchpadPro::setPulse(int row, int col, BYTE  color) {
+    if (isConnected() == false) return;
+    BYTE key = 10 * row + col;
+    sendMessage(240, 0, 32, 41, 2, 16, 40, key, color, SYSEX_FIN);
 }
 
 void LaunchpadPro::displayText(unsigned int color, unsigned int speed,
@@ -282,14 +292,10 @@ void LaunchpadPro::playMidiFile(std::string file) {
 
 void LaunchpadPro::setupMapper(std::string mapgame)
 {
-    game_to_map = "mapgame";
-    std::thread mapper_thread(&maproutine,this);
-}
+    game_to_map = mapgame;
 
-void LaunchpadPro::maproutine()
-{
     std::vector<BYTE> msg;
-    MidiParser midiparser(this, "lol");
+    MidiParser midiparser(this, game_to_map);
 
     while (true)
     {
@@ -301,6 +307,7 @@ void LaunchpadPro::maproutine()
         Sleep(30);
     }
 }
+
 
 
 bool LaunchpadPro::isButton(int row , int col)
