@@ -4,13 +4,18 @@
 Launchpad Gamer provides an grant acccess to control launchpad behavior, within only one or two config files
 To reach this goal, Launchpad Gamer provides an interface where you can combine varieties of public method by writing them in to one or two config files, then load them in. Your launchpad will react as your every line configured in text.
 
-## FEEL FREE TO SUBMIT A PR ! 
-* Your Config Set or Code helps to exploit the best Launchpad !
+## FEEL FREE TO SUBMIT YOUR PR ! 
+* Your Config Set in a situation (a game,a software,...)
+* Bug Fix
+* Optimizition
+* More Device Support
+### Your devotion helps to exploit the best Launchpad !
+
 
 ## Support:
-* Customizing Keyboard/Moust Mapping with config a file
+* Customizing Keyboard/Moust Mapping with a config file
 * Control Cursor Movement Speed by your tap velocity !
-* Customizing Light Effect / Midi File with config a file
+* Customizing Light Effect / Midi File with a config file
 * Easy & Combinable & Abbreviatable  Config Rule !
 
 
