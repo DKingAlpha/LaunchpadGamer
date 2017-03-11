@@ -24,8 +24,7 @@ To reach this goal, Launchpad Gamer provides an interface where you can combine 
 * The Project is currently only tested based on `Launchpad Pro`.
 
 
-## Bug:
-* Memory Leak at 20KB/s
+## Enhencement:
 * Config Parser Compatibility
 
 
