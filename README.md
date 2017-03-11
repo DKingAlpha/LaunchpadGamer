@@ -1,7 +1,8 @@
-### This project provides an acccess to control launchpad behavior with one or two config files,
-### which supports powerful functions , highly customizable , with easy grammer.
+# This project provides an acccess to control launchpad behavior within one or two config files, which supports powerful functions with easy grammer.
 
-#### FEEL FREE TO SUBMIT A PR ! Your Config Set or Code helps to exploit the real Launchpad !
+
+## FEEL FREE TO SUBMIT A PR ! 
+* Your Config Set or Code helps to exploit the real Launchpad !
 
 ## Support:
 * Customizing Keyboard/Moust Mapping with config a file
@@ -10,12 +11,12 @@
 * Easy & Combinable & Abbreviatable  Config Rule !
 
 
-### Notice:
+## Notice:
 * The Project is currently tested on a Launchpad Pro.
 * No real support for other Launchpad device.
 
 
-### Progress:
+## Progress:
 * Launchpad Interface                        Done
 * Light Control config grammer               Done
 * Light Control config parser                Done
@@ -25,7 +26,9 @@
 * Sound/Music Support                        Undecided
 
 
-#### Config files should be put at config/$CONFSET/
+## HELP INFO
+
+### Config files should be put at config/$CONFSET/
 Then be load in test.cpp main() as lpd->loadConfig(CONFSET);
 
 Light mapping file should be named as light.ini
@@ -45,7 +48,7 @@ Key mapping file should be named as keymap.ini
 
 
 ###   KEY     EVENT         ACTIONS
-*   key     event        action1;action2;action3;...
+* `  key     event        action1;action2;action3;...`
 
 ### KEY
 * row,col
@@ -65,7 +68,8 @@ Key mapping file should be named as keymap.ini
 * SetPadColor(color1)
 * SetFlash(key1,color1|row2,col2,color2|...)
 * SetPulse(key1,color1|row2,col2,color2|...)
-* DisplayText(color,speed,text)
+* DisplayText(color,loop,speed,text)         # speed=1-7  # loop = 1/0  # ONLY USED IN KEYDOWN/KEYUP
+* DisplayText(color,speed,text)              # ONLY USED IN KEYAUTO
 * ClearPad()
 * StopDisplayText()
 * SendMessage(dec1,dec2,dec3,...)
