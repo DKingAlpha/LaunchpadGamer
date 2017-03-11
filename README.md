@@ -1,7 +1,7 @@
 # Launchpad Gamer makes your Launchpad never cooler and funnier than ever before!
 
 ## What does it Do:
-Launchpad Gamer provides an grant acccess to control launchpad behavior, within only one or two config files
+Launchpad Gamer provides a grant acccess to control launchpad behavior, within only one or two config files.
 To reach this goal, Launchpad Gamer provides an interface where you can combine varieties of public method by writing them in to one or two config files, then load them in. Your launchpad will react as your every line configured in text.
 
 ## FEEL FREE TO SUBMIT YOUR PR ! 
