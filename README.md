@@ -20,8 +20,8 @@ To reach this goal, Launchpad Gamer provides an interface where you can combine 
 
 
 ## Notice:
-* The Project is currently tested on a Launchpad Pro.
-* No real support for other Launchpad device.
+* The Project is currently only tested based on `Launchpad Pro`.
+
 
 
 ## Progress:
@@ -31,7 +31,10 @@ To reach this goal, Launchpad Gamer provides an interface where you can combine 
 * Key Mapper config grammer                  Done
 * Key Mapper config parser                   Done
 * Key Simulator control Interface            Done
-* Sound/Music Support                        Undecided
+* Sound/Music Support                        Undecided
+* GUI                                        Undecided
+`If you really need these, issue please.`
+
 
 
 ## HELP INFO
@@ -90,7 +93,7 @@ Key mapping file should be named as keymap.ini
 * MouseLeft(x1,y1)
 * MouseRight(x1,y1)
 * MouseMiddle(x1,y1)
-* MouseShift(x1,y2)      # auto repeat    # recommend  -40~40   # offset=+AUTO or offset=-AUTO to move mouse by your velocity !
+* MouseShift(x1,y2)      # auto repeat    # recommend  -40~40   # offset=+AUTO or offset=-AUTO to move mouse by velocity !
 * KeyPress(keyname)     # auto repeat
 
 ## KEYUP/KEYDOWN       # Click/Down/Up action support Action() at current position
