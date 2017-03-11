@@ -157,12 +157,12 @@ void InputAgent::KeyPress(int caller_lpdkey, std::string keyname)
 
 void InputAgent::KeyUp(int vkcode)
 {
-    LPINPUT lpinput = new INPUT;
-    memset(lpinput, 0, 1 * sizeof(INPUT));
-    lpinput->type = INPUT_KEYBOARD;
-    lpinput->ki.wScan = MapVirtualKey(vkcode, MAPVK_VK_TO_VSC);
-    lpinput->ki.dwFlags = KEYEVENTF_SCANCODE | KEYEVENTF_KEYUP | (isExtKey(vkcode) ? KEYEVENTF_EXTENDEDKEY : 0) ;
-    SendInput(1, lpinput, sizeof(INPUT));
+    INPUT inputdata;
+    memset(&inputdata, 0, 1 * sizeof(INPUT));
+    inputdata.type = INPUT_KEYBOARD;
+    inputdata.ki.wScan = MapVirtualKey(vkcode, MAPVK_VK_TO_VSC);
+    inputdata.ki.dwFlags = KEYEVENTF_SCANCODE | KEYEVENTF_KEYUP | (isExtKey(vkcode) ? KEYEVENTF_EXTENDEDKEY : 0) ;
+    SendInput(1, &inputdata, sizeof(INPUT));
 }
 
 void InputAgent::KeyUp(std::string keyname)
@@ -172,12 +172,12 @@ void InputAgent::KeyUp(std::string keyname)
 
 void InputAgent::KeyDown(int vkcode)
 {
-    LPINPUT lpinput = new INPUT;
-    memset(lpinput, 0, 1 * sizeof(INPUT));
-    lpinput->type = INPUT_KEYBOARD;
-    lpinput->ki.wScan = MapVirtualKey(vkcode, MAPVK_VK_TO_VSC);
-    lpinput->ki.dwFlags = KEYEVENTF_SCANCODE | (isExtKey(vkcode) ? KEYEVENTF_EXTENDEDKEY : 0);
-    SendInput(1, lpinput, sizeof(INPUT));
+    INPUT inputdata;
+    memset(&inputdata, 0, 1 * sizeof(INPUT));
+    inputdata.type = INPUT_KEYBOARD;
+    inputdata.ki.wScan = MapVirtualKey(vkcode, MAPVK_VK_TO_VSC);
+    inputdata.ki.dwFlags = KEYEVENTF_SCANCODE | (isExtKey(vkcode) ? KEYEVENTF_EXTENDEDKEY : 0);
+    SendInput(1, &inputdata, sizeof(INPUT));
 }
 
 void InputAgent::KeyDown(std::string keyname)
@@ -196,20 +196,20 @@ void InputAgent::MouseLeftClick()
 
 void InputAgent::MouseLeftDown()
 {
-    LPINPUT lpinput = new INPUT;
-    memset(lpinput, 0, 1 * sizeof(INPUT));
-    lpinput->type = INPUT_MOUSE;
-    lpinput->mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
-    SendInput(1, lpinput, sizeof(INPUT));
+    INPUT inputdata;
+    memset(&inputdata, 0, 1 * sizeof(INPUT));
+    inputdata.type = INPUT_MOUSE;
+    inputdata.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
+    SendInput(1, &inputdata, sizeof(INPUT));
 }
 
 void InputAgent::MouseLeftUp()
 {
-    LPINPUT lpinput = new INPUT;
-    memset(lpinput, 0, 1 * sizeof(INPUT));
-    lpinput->type = INPUT_MOUSE;
-    lpinput->mi.dwFlags = MOUSEEVENTF_LEFTUP;
-    SendInput(1, lpinput, sizeof(INPUT));
+    INPUT inputdata;
+    memset(&inputdata, 0, 1 * sizeof(INPUT));
+    inputdata.type = INPUT_MOUSE;
+    inputdata.mi.dwFlags = MOUSEEVENTF_LEFTUP;
+    SendInput(1, &inputdata, sizeof(INPUT));
 }
 
 void InputAgent::MouseRightClick()
@@ -221,20 +221,20 @@ void InputAgent::MouseRightClick()
 
 void InputAgent::MouseRightDown()
 {
-    LPINPUT lpinput = new INPUT;
-    memset(lpinput, 0, 1 * sizeof(INPUT));
-    lpinput->type = INPUT_MOUSE;
-    lpinput->mi.dwFlags = MOUSEEVENTF_RIGHTDOWN;
-    SendInput(1, lpinput, sizeof(INPUT));
+    INPUT inputdata;
+    memset(&inputdata, 0, 1 * sizeof(INPUT));
+    inputdata.type = INPUT_MOUSE;
+    inputdata.mi.dwFlags = MOUSEEVENTF_RIGHTDOWN;
+    SendInput(1, &inputdata, sizeof(INPUT));
 }
 
 void InputAgent::MouseRightUp()
 {
-    LPINPUT lpinput = new INPUT;
-    memset(lpinput, 0, 1 * sizeof(INPUT));
-    lpinput->type = INPUT_MOUSE;
-    lpinput->mi.dwFlags = MOUSEEVENTF_RIGHTUP;
-    SendInput(1, lpinput, sizeof(INPUT));
+    INPUT inputdata;
+    memset(&inputdata, 0, 1 * sizeof(INPUT));
+    inputdata.type = INPUT_MOUSE;
+    inputdata.mi.dwFlags = MOUSEEVENTF_RIGHTUP;
+    SendInput(1, &inputdata, sizeof(INPUT));
 }
 
 void InputAgent::MouseMiddleClick()
@@ -246,20 +246,20 @@ void InputAgent::MouseMiddleClick()
 
 void InputAgent::MouseMiddleDown()
 {
-    LPINPUT lpinput = new INPUT;
-    memset(lpinput, 0, 1 * sizeof(INPUT));
-    lpinput->type = INPUT_MOUSE;
-    lpinput->mi.dwFlags = MOUSEEVENTF_MIDDLEDOWN;
-    SendInput(1, lpinput, sizeof(INPUT));
+    INPUT inputdata;
+    memset(&inputdata, 0, 1 * sizeof(INPUT));
+    inputdata.type = INPUT_MOUSE;
+    inputdata.mi.dwFlags = MOUSEEVENTF_MIDDLEDOWN;
+    SendInput(1, &inputdata, sizeof(INPUT));
 }
 
 void InputAgent::MouseMiddleUp()
 {
-    LPINPUT lpinput = new INPUT;
-    memset(lpinput, 0, 1 * sizeof(INPUT));
-    lpinput->type = INPUT_MOUSE;
-    lpinput->mi.dwFlags = MOUSEEVENTF_MIDDLEUP;
-    SendInput(1, lpinput, sizeof(INPUT));
+    INPUT inputdata;
+    memset(&inputdata, 0, 1 * sizeof(INPUT));
+    inputdata.type = INPUT_MOUSE;
+    inputdata.mi.dwFlags = MOUSEEVENTF_MIDDLEUP;
+    SendInput(1, &inputdata, sizeof(INPUT));
 }
 
 
@@ -273,24 +273,24 @@ void InputAgent::MouseLeftClick(int x, int y)
 
 void InputAgent::MouseLeftDown(int x, int y)
 {
-    LPINPUT lpinput = new INPUT;
-    memset(lpinput, 0, 1 * sizeof(INPUT));
-    lpinput->type = INPUT_MOUSE;
-    lpinput->mi.dx = x*(65536.0f / (GetSystemMetrics(SM_CXSCREEN)-1));
-    lpinput->mi.dy = y*(65536.0f / (GetSystemMetrics(SM_CYSCREEN)-1));
-    lpinput->mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE | MOUSEEVENTF_LEFTDOWN;
-    SendInput(1, lpinput, sizeof(INPUT));
+    INPUT inputdata;
+    memset(&inputdata, 0, 1 * sizeof(INPUT));
+    inputdata.type = INPUT_MOUSE;
+    inputdata.mi.dx = x*(65536.0f / (GetSystemMetrics(SM_CXSCREEN)-1));
+    inputdata.mi.dy = y*(65536.0f / (GetSystemMetrics(SM_CYSCREEN)-1));
+    inputdata.mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE | MOUSEEVENTF_LEFTDOWN;
+    SendInput(1, &inputdata, sizeof(INPUT));
 }
 
 void InputAgent::MouseLeftUp(int x, int y)
 {
-    LPINPUT lpinput = new INPUT;
-    memset(lpinput, 0, 1 * sizeof(INPUT));
-    lpinput->type = INPUT_MOUSE;
-    lpinput->mi.dx = x*(65536.0f / (GetSystemMetrics(SM_CXSCREEN)-1));
-    lpinput->mi.dy = y*(65536.0f / (GetSystemMetrics(SM_CYSCREEN)-1));
-    lpinput->mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE | MOUSEEVENTF_LEFTUP;
-    SendInput(1, lpinput, sizeof(INPUT));
+    INPUT inputdata;
+    memset(&inputdata, 0, 1 * sizeof(INPUT));
+    inputdata.type = INPUT_MOUSE;
+    inputdata.mi.dx = x*(65536.0f / (GetSystemMetrics(SM_CXSCREEN)-1));
+    inputdata.mi.dy = y*(65536.0f / (GetSystemMetrics(SM_CYSCREEN)-1));
+    inputdata.mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE | MOUSEEVENTF_LEFTUP;
+    SendInput(1, &inputdata, sizeof(INPUT));
 }
 
 void InputAgent::MouseRightClick(int x, int y)
@@ -302,24 +302,24 @@ void InputAgent::MouseRightClick(int x, int y)
 
 void InputAgent::MouseRightDown(int x, int y)
 {
-    LPINPUT lpinput = new INPUT;
-    memset(lpinput, 0, 1 * sizeof(INPUT));
-    lpinput->type = INPUT_MOUSE;
-    lpinput->mi.dx = x*(65536.0f / (GetSystemMetrics(SM_CXSCREEN)-1));
-    lpinput->mi.dy = y*(65536.0f / (GetSystemMetrics(SM_CYSCREEN)-1));
-    lpinput->mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE | MOUSEEVENTF_RIGHTDOWN;
-    SendInput(1, lpinput, sizeof(INPUT));
+    INPUT inputdata;
+    memset(&inputdata, 0, 1 * sizeof(INPUT));
+    inputdata.type = INPUT_MOUSE;
+    inputdata.mi.dx = x*(65536.0f / (GetSystemMetrics(SM_CXSCREEN)-1));
+    inputdata.mi.dy = y*(65536.0f / (GetSystemMetrics(SM_CYSCREEN)-1));
+    inputdata.mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE | MOUSEEVENTF_RIGHTDOWN;
+    SendInput(1, &inputdata, sizeof(INPUT));
 }
 
 void InputAgent::MouseRightUp(int x, int y)
 {
-    LPINPUT lpinput = new INPUT;
-    memset(lpinput, 0, 1 * sizeof(INPUT));
-    lpinput->type = INPUT_MOUSE;
-    lpinput->mi.dx = x*(65536.0f / (GetSystemMetrics(SM_CXSCREEN)-1));
-    lpinput->mi.dy = y*(65536.0f / (GetSystemMetrics(SM_CYSCREEN)-1));
-    lpinput->mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE | MOUSEEVENTF_RIGHTUP;
-    SendInput(1, lpinput, sizeof(INPUT));
+    INPUT inputdata;
+    memset(&inputdata, 0, 1 * sizeof(INPUT));
+    inputdata.type = INPUT_MOUSE;
+    inputdata.mi.dx = x*(65536.0f / (GetSystemMetrics(SM_CXSCREEN)-1));
+    inputdata.mi.dy = y*(65536.0f / (GetSystemMetrics(SM_CYSCREEN)-1));
+    inputdata.mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE | MOUSEEVENTF_RIGHTUP;
+    SendInput(1, &inputdata, sizeof(INPUT));
 }
 
 void InputAgent::MouseMiddleClick(int x, int y)
@@ -331,49 +331,49 @@ void InputAgent::MouseMiddleClick(int x, int y)
 
 void InputAgent::MouseMiddleDown(int x, int y)
 {
-    LPINPUT lpinput = new INPUT;
-    memset(lpinput, 0, 1 * sizeof(INPUT));
-    lpinput->type = INPUT_MOUSE;
-    lpinput->mi.dx = x*(65536.0f / (GetSystemMetrics(SM_CXSCREEN)-1));
-    lpinput->mi.dy = y*(65536.0f / (GetSystemMetrics(SM_CYSCREEN)-1));
-    lpinput->mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE | MOUSEEVENTF_MIDDLEDOWN;
-    SendInput(1, lpinput, sizeof(INPUT));
+    INPUT inputdata;
+    memset(&inputdata, 0, 1 * sizeof(INPUT));
+    inputdata.type = INPUT_MOUSE;
+    inputdata.mi.dx = x*(65536.0f / (GetSystemMetrics(SM_CXSCREEN)-1));
+    inputdata.mi.dy = y*(65536.0f / (GetSystemMetrics(SM_CYSCREEN)-1));
+    inputdata.mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE | MOUSEEVENTF_MIDDLEDOWN;
+    SendInput(1, &inputdata, sizeof(INPUT));
 }
 
 void InputAgent::MouseMiddleUp(int x, int y)
 {
-    LPINPUT lpinput = new INPUT;
-    memset(lpinput, 0, 1 * sizeof(INPUT));
-    lpinput->type = INPUT_MOUSE;
-    lpinput->mi.dx = x*(65536.0f / (GetSystemMetrics(SM_CXSCREEN)-1));
-    lpinput->mi.dy = y*(65536.0f / (GetSystemMetrics(SM_CYSCREEN)-1));
-    lpinput->mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE | MOUSEEVENTF_MIDDLEUP;
-    SendInput(1, lpinput, sizeof(INPUT));
+    INPUT inputdata;
+    memset(&inputdata, 0, 1 * sizeof(INPUT));
+    inputdata.type = INPUT_MOUSE;
+    inputdata.mi.dx = x*(65536.0f / (GetSystemMetrics(SM_CXSCREEN)-1));
+    inputdata.mi.dy = y*(65536.0f / (GetSystemMetrics(SM_CYSCREEN)-1));
+    inputdata.mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE | MOUSEEVENTF_MIDDLEUP;
+    SendInput(1, &inputdata, sizeof(INPUT));
 }
 
 void InputAgent::MouseMove(int x, int y)
 {
-    LPINPUT lpinput = new INPUT;
-    memset(lpinput, 0, 1 * sizeof(INPUT));
-    lpinput->type = INPUT_MOUSE;
-    lpinput->mi.dx = x*(65536.0f / (GetSystemMetrics(SM_CXSCREEN)-1));
-    lpinput->mi.dy = y*(65536.0f / (GetSystemMetrics(SM_CYSCREEN)-1));
-    lpinput->mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE;
-    SendInput(1, lpinput, sizeof(INPUT));
+    INPUT inputdata;
+    memset(&inputdata, 0, 1 * sizeof(INPUT));
+    inputdata.type = INPUT_MOUSE;
+    inputdata.mi.dx = x*(65536.0f / (GetSystemMetrics(SM_CXSCREEN)-1));
+    inputdata.mi.dy = y*(65536.0f / (GetSystemMetrics(SM_CYSCREEN)-1));
+    inputdata.mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE;
+    SendInput(1, &inputdata, sizeof(INPUT));
 }
 
 void InputAgent::MouseShift(int caller_lpdkey, int x, int y)
 {
     do {
-        LPINPUT lpinput = new INPUT;
-        LPPOINT lpp = new POINT;
-        memset(lpinput, 0, 1 * sizeof(INPUT));
-        GetCursorPos(lpp);
-        lpinput->type = INPUT_MOUSE;
-        lpinput->mi.dx = (lpp->x + x) * (65536.0f / (GetSystemMetrics(SM_CXSCREEN)-1));
-        lpinput->mi.dy = (lpp->y - y) * (65536.0f / (GetSystemMetrics(SM_CYSCREEN)-1));
-        lpinput->mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE;
-        SendInput(1, lpinput, sizeof(INPUT));
+        INPUT inputdata;
+        POINT pointerpos;
+        memset(&inputdata, 0, 1 * sizeof(INPUT));
+        GetCursorPos(&pointerpos);
+        inputdata.type = INPUT_MOUSE;
+        inputdata.mi.dx = (pointerpos.x + x) * (65536.0f / (GetSystemMetrics(SM_CXSCREEN)-1));
+        inputdata.mi.dy = (pointerpos.y - y) * (65536.0f / (GetSystemMetrics(SM_CYSCREEN)-1));
+        inputdata.mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE;
+        SendInput(1, &inputdata, sizeof(INPUT));
         Sleep(5);
 
     } while (PadStatus[caller_lpdkey] == 1);

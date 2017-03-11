@@ -14,7 +14,7 @@ class MidiParser
 
     private:
         LaunchpadPro* lpd = 0;
-        InputAgent* input = new InputAgent();
+        InputAgent* input = 0;
         std::string game_to_map;
         // map<pair<key,event>,actionstring>
         std::map<std::pair<int, int>, std::string> conf_keymap;

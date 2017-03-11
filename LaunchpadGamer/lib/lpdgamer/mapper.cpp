@@ -53,6 +53,7 @@ std::vector<std::string> split(const  std::string& s, const std::string& delim)
 MidiParser::MidiParser(LaunchpadPro * launchpad, std::string mapgame)
 {
     lpd = launchpad;
+    input = new InputAgent();
     game_to_map = mapgame;
     setupMapper(game_to_map);
 
@@ -61,6 +62,7 @@ MidiParser::MidiParser(LaunchpadPro * launchpad, std::string mapgame)
 MidiParser::MidiParser(LaunchpadPro * launchpad)
 {
     lpd = launchpad;
+    input = new InputAgent();
     game_to_map = "lol";
     setupMapper(game_to_map);
 }

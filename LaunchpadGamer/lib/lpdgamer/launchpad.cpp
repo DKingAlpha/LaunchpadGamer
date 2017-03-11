@@ -299,8 +299,8 @@ void LaunchpadPro::loadConfig(std::string mapgame)
 
     std::vector<BYTE> msg;
     MidiParser midiparser(this, game_to_map);
-
-    while (true)
+    int time_run = 0;
+    while (++time_run<300)
     {
         getMessage(&msg);
         if (msg.size() != 0)
