@@ -22,6 +22,18 @@
     <Filter Include="Library\rtmidi">
       <UniqueIdentifier>{50afebc5-47ac-4d38-9304-fae3474983b0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Doc">
+      <UniqueIdentifier>{21780fb6-0ef3-4bee-9d93-4da656137c1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="licenses">
+      <UniqueIdentifier>{202d856d-4032-41c7-9ac2-529b503965dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config">
+      <UniqueIdentifier>{f3149942-9c88-414f-b0b7-a8e572063a77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config\lol">
+      <UniqueIdentifier>{741d339b-fb6a-46ee-9b02-46a15e63d469}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\midifile\Binasc.h">
@@ -48,10 +60,19 @@
     <ClInclude Include="lib\rtmidi\rtmidi_c.h">
       <Filter>Library\rtmidi</Filter>
     </ClInclude>
-    <ClInclude Include="lib\launchpad.h">
+    <ClInclude Include="lib\lpdgamer\extravk.h">
       <Filter>Library</Filter>
     </ClInclude>
-    <ClInclude Include="lib\mapper.h">
+    <ClInclude Include="lib\lpdgamer\inputagent.h">
+      <Filter>Library</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\lpdgamer\launchpad.h">
+      <Filter>Library</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\lpdgamer\mapper.h">
+      <Filter>Library</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\lpdgamer\padstatus.h">
       <Filter>Library</Filter>
     </ClInclude>
   </ItemGroup>
@@ -83,11 +104,42 @@
     <ClCompile Include="lib\rtmidi\rtmidi_c.cpp">
       <Filter>Library\rtmidi</Filter>
     </ClCompile>
-    <ClCompile Include="lib\launchpad.cpp">
+    <ClCompile Include="lib\lpdgamer\inputagent.cpp">
       <Filter>Library</Filter>
     </ClCompile>
-    <ClCompile Include="lib\mapper.cpp">
+    <ClCompile Include="lib\lpdgamer\launchpad.cpp">
       <Filter>Library</Filter>
     </ClCompile>
+    <ClCompile Include="lib\lpdgamer\mapper.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\lpdgamer\padstatus.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Filter>Doc</Filter>
+    </None>
+    <None Include="config\lol\keymap.ini">
+      <Filter>config\lol</Filter>
+    </None>
+    <None Include="config\lol\light.ini">
+      <Filter>config\lol</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\licenses\launchpadgamer.txt">
+      <Filter>licenses</Filter>
+    </Text>
+    <Text Include="..\licenses\libmidifile.txt">
+      <Filter>licenses</Filter>
+    </Text>
+    <Text Include="..\licenses\librtmidi.txt">
+      <Filter>licenses</Filter>
+    </Text>
+    <Text Include="..\licenses\lightpad.txt">
+      <Filter>licenses</Filter>
+    </Text>
   </ItemGroup>
 </Project>

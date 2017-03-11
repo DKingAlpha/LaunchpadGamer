@@ -1,0 +1,26 @@
+# You can use these keys for keymap config
+# (case insensitive)
+
+
+
+A    B    C    D    E    F    G    H    I    J    K    L    M    N    O
+P    Q    R    S    T    U    V    W    X    Y    Z
+
+F1    F2    F3     F4    F5    F6    F7    F8    F9    F10    F11    F12
+F13   F14   F15    F16   F17   F18   F19   F20   F21   F22    F23    F24
+
+LEFT     UP      DOWN     RIGHT     ENTER    BACKSPACE    SPACE
+TAB      CAPSLOCK     ESC
+
+LALT    RALT     LCTRL    RCTRL   LSHIFT    RSHIFT    LWIN    RWIN
+
+
+NUMPAD0    NUMPAD1    NUMPAD2    NUMPAD3    NUMPAD4    NUMPAD5    NUMPAD6    NUMPAD7    NUMPAD8    NUMPAD9
+NUMLOCK    MULTIPLY   ADD        SUBTRACT   DECIMAL    DIVIDE
+
+
+PAGEUP PAGEDOWN  HOME    END    SNAPSHOT   INSERT   DELETE 
+    
+
+# not recommended   (use L/Rctrl L/Ralt instead)
+CTRL  ALT   SHIFT    ALT   SELECT    HELP    SCROLL    PLAY     ZOOM

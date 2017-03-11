@@ -3,24 +3,28 @@
 #include <cstdlib>
 #include <windows.h>
 
-#include "lib/launchpad.h"
+#include "lib/lpdgamer/launchpad.h"
 
 
 int main(void)
 {
-    char midif[20] = "";
-    char midifilename[40] = "";
-
     LaunchpadPro* lpd = new LaunchpadPro();
     lpd->connect();
-    std::vector<BYTE> msg;
-
-    if (lpd->isConnected())
+    std::string config_set;
+    std::cout << "Please Enter the Name of Config Set(Name of Folder in config/):" << std::endl;
+    std::cin >> config_set;
+    while (true)
     {
-        lpd->setupMapper("lol");
-    }
-    else
-    {
-        printf("not connected\n");
+        if (lpd->isConnected())
+        {
+            std::cout << "Launchpad is Connected!" << std::endl << "Launchpad¡¡Gamer Running" << std::endl;
+            lpd->loadConfig(config_set.c_str());
+        }
+        else
+        {
+            std::cout << "Launchpad is not connected (well)." << std::endl<< "Reconnecting..." << std::endl;
+            Sleep(5000);
+            lpd->connect();
+        }
     }
 }
