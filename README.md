@@ -1,21 +1,30 @@
-### This project provides an acccess to control launchpad behavior with one or two config files,
-### which supports powerful functions , highly customizable , with easy grammer.
+# Launchpad Gamer makes your Launchpad never cooler and funnier than ever before!
 
-#### FEEL FREE TO SUBMIT A PR ! Your Config Set or Code helps to exploit the real Launchpad !
+## What does it Do:
+Launchpad Gamer provides a grant acccess to control launchpad behavior, within only one or two config files.
+To reach this goal, Launchpad Gamer provides an interface where you can combine varieties of public method by writing them in to one or two config files, then load them in. Your launchpad will react as your every line configured in text.
+
+## FEEL FREE TO SUBMIT YOUR PR ! 
+* Your Config Set in a situation (a game,a software,...)
+* Bug Fix
+* Optimizition
+* More Device Support
+### Your devotion helps to exploit the best Launchpad !
+
 
 ## Support:
-* Customizing Keyboard/Moust Mapping with config a file
+* Customizing Keyboard/Moust Mapping with a config file
 * Control Cursor Movement Speed by your tap velocity !
-* Customizing Light Effect / Midi File with config a file
+* Customizing Light Effect / Midi File with a config file
 * Easy & Combinable & Abbreviatable  Config Rule !
 
 
-### Notice:
+## Notice:
 * The Project is currently tested on a Launchpad Pro.
 * No real support for other Launchpad device.
 
 
-### Progress:
+## Progress:
 * Launchpad Interface                        Done
 * Light Control config grammer               Done
 * Light Control config parser                Done
@@ -25,7 +34,9 @@
 * Sound/Music Support                        Undecided
 
 
-#### Config files should be put at config/$CONFSET/
+## HELP INFO
+
+### Config files should be put at config/$CONFSET/
 Then be load in test.cpp main() as lpd->loadConfig(CONFSET);
 
 Light mapping file should be named as light.ini
@@ -44,8 +55,11 @@ Key mapping file should be named as keymap.ini
 * `THAT'S ALL ABOUT IT !`
 
 
-###   KEY     EVENT         ACTIONS
-*   key     event        action1;action2;action3;...
+### Config Item Pattern
+
+    KEY       EVENT           ACTIONS
+    
+    key     event        action1;action2;action3;...
 
 ### KEY
 * row,col
@@ -57,7 +71,7 @@ Key mapping file should be named as keymap.ini
 * KEYUP
 
 
-###    ACTION
+### ACTION
 * PlayMidiFile(filepath)
 * SetColor(key1,color1|row2,col2,color2|...)
 * SetRowColor(row1,color1|row2,color2|...)
@@ -65,7 +79,8 @@ Key mapping file should be named as keymap.ini
 * SetPadColor(color1)
 * SetFlash(key1,color1|row2,col2,color2|...)
 * SetPulse(key1,color1|row2,col2,color2|...)
-* DisplayText(color,speed,text)
+* DisplayText(color,loop,speed,text)         # speed=1-7  # loop = 1/0  # ONLY USED IN KEYDOWN/KEYUP
+* DisplayText(color,speed,text)              # ONLY USED IN KEYAUTO
 * ClearPad()
 * StopDisplayText()
 * SendMessage(dec1,dec2,dec3,...)
