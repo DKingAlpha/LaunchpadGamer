@@ -9,6 +9,7 @@ To reach this goal, Launchpad Gamer provides an interface where you can combine 
 * Bug Fix
 * Optimizition
 * More Device Support
+
 ### Your devotion helps to exploit the best Launchpad !
 
 
@@ -33,6 +34,7 @@ To reach this goal, Launchpad Gamer provides an interface where you can combine 
 * Key Simulator control Interface            Done
 * Sound/Music Support                        Undecided
 * GUI                                        Undecided
+
 `If you really need these, issue please.`
 
 
