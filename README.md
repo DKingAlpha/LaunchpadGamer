@@ -4,6 +4,35 @@
 Launchpad Gamer provides a grant acccess to control launchpad behavior, within only one or two config files.
 To reach this goal, Launchpad Gamer provides an interface where you can combine varieties of public method by writing them in to one or two config files, then load them in. Your launchpad will react as your every line configured in text.
 
+
+## Usage Examples
+Add in config/confset/*.ini
+```
+# Mouse Smooth Move
+3,6  KEYAUTO  MouseShift(-AUTO,+AUTO)
+3,7  KEYAUTO  MouseShift(0,+AUTO)
+3,8  KEYAUTO  MouseShift(+AUTO,+AUTO)
+2,6  KEYAUTO  MouseShift(-AUTO,0)
+2,7  KEYAUTO  MouseLeft()
+2,8  KEYAUTO  MouseShift(+AUTO,0)
+1,6  KEYAUTO  MouseShift(-AUTO,-AUTO)
+1,7  KEYAUTO  MouseShift(0,-AUTO)
+1,8  KEYAUTO  MouseShift(+AUTO,-AUTO)
+
+
+* Mouse Shift Light
+3,6  KEYAUTO  SetColor(3,6,45);Sleep(25);SetColor(4,5,45);Sleep(25);SetColor(5,4,45);Sleep(25);SetColor(6,3,45);Sleep(25);SetColor(7,2,45);Sleep(25);SetColor(8,1,45)
+3,7  KEYAUTO  SetColor(3,7,45);Sleep(25);SetColor(4,7,45);Sleep(25);SetColor(5,7,45);Sleep(25);SetColor(6,7,45);Sleep(25);SetColor(7,7,45);Sleep(25);SetColor(8,7,45)
+3,8  KEYAUTO  SetColor(3,8,45)
+2,6  KEYAUTO  SetColor(2,6,45);Sleep(25);SetColor(2,5,45);Sleep(25);SetColor(2,4,45);Sleep(25);SetColor(2,3,45);Sleep(25);SetColor(2,2,45);Sleep(25);SetColor(2,1,45)
+2,7  KEYAUTO  SetColor(3,6,40);SetColor(3,8,40);SetColor(1,6,40);SetColor(1,8,40);SetRowColor(2,45);SetColumnColor(7,45);
+2,8  KEYAUTO  SetColor(2,8,45)
+1,6  KEYAUTO  SetColor(1,6,45)
+1,7  KEYAUTO  SetColor(1,7,45)
+1,8  KEYAUTO  SetColor(1,8,45)
+```
+Save and Run !
+
 ## FEEL FREE TO SUBMIT YOUR PR ! 
 * Your Config Set in a situation (a game,a software,...)
 * Bug Fix
@@ -22,24 +51,6 @@ To reach this goal, Launchpad Gamer provides an interface where you can combine 
 
 ## Notice:
 * The Project is currently only tested based on `Launchpad Pro`.
-
-
-## Enhencement:
-* Config Parser Compatibility
-
-
-## Progress:
-* Launchpad Interface                        Done
-* Light Control config grammer               Done
-* Light Control config parser                Done
-* Key Mapper config grammer                  Done
-* Key Mapper config parser                   Done
-* Key Simulator control Interface            Done
-* Sound/Music Support                        Undecided
-* GUI                                        Undecided
-
-`If you really need these, issue please.`
-
 
 
 ## HELP INFO
