@@ -1,3 +1,7 @@
+# Warning: Due to the rare occasion of being used, this project is no more maintained by me. Yet, feel free to submit any PR if you got any improvement. I will regularly check the notification XD.
+`bug in parsing config file is not fixed yet.`
+
+
 # Launchpad Gamer makes your Launchpad never cooler and funnier than ever before!
 
 ## What does it Do:
@@ -71,7 +75,6 @@ Key mapping file should be named as keymap.ini
 * Rule 6: Be careful with KEYAUTO.
 * Rule 7: () is neccessary , even it's no argument.
 * Rule 8: Velocity needs to be enabled in Launchpad Pro
-* `THAT'S ALL ABOUT IT !`
 
 
 ### Config Item Pattern
