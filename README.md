@@ -1,6 +1,8 @@
 # Warning:
 Deprecated
 
+This tool is a console-based Launchpad Controller. Please refer to the newer project [ControllerGamer](https://github.com/DKingCN/ControllerGamer) with GUI designed.
+
 `bug in parsing config file is not fixed yet.`
 
 
