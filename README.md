@@ -1,8 +1,8 @@
-# Warning: Due to the rare occasion of being used, this project is no more maintained by me. Yet, feel free to submit any PR if you got any improvement. I will regularly check the notification XD.
+# Warning:
+Deprecated
+
 `bug in parsing config file is not fixed yet.`
 
-
-# Launchpad Gamer makes your Launchpad never cooler and funnier than ever before!
 
 ## What does it Do:
 Launchpad Gamer provides a grant acccess to control launchpad behavior, within only one or two config files.
@@ -37,14 +37,11 @@ Add in config/confset/*.ini
 ```
 Save and Run !
 
-## FEEL FREE TO SUBMIT YOUR PR ! 
+## FEEL FREE TO SUBMIT YOUR PR
 * Your Config Set in a situation (a game,a software,...)
 * Bug Fix
 * Optimizition
 * More Device Support
-
-### Your devotion helps to exploit the best Launchpad !
-
 
 ## Support:
 * Customizing Keyboard/Moust Mapping with a config file
@@ -54,7 +51,7 @@ Save and Run !
 
 
 ## Notice:
-* The Project is currently only tested based on `Launchpad Pro`.
+* The Project is currently only tested on `Launchpad Pro`.
 
 
 ## HELP INFO
@@ -73,7 +70,7 @@ Key mapping file should be named as keymap.ini
 * Rule 4: Some Arguments can be write in one Action, divided by `|`
 * Rule 5: Some Actions are restricted with EVENT.
 * Rule 6: Be careful with KEYAUTO.
-* Rule 7: () is neccessary , even it's no argument.
+* Rule 7: () is neccessary , even it has no arguments.
 * Rule 8: Velocity needs to be enabled in Launchpad Pro
 
 
